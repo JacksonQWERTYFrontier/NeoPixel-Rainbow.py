@@ -3,7 +3,7 @@ import time
 from neopixel import NeoPixel
 import random
 
-np = NeoPixel(board.D2, 30, auto_write=False, brightness = 0.3)
+np = NeoPixel(board.D2, 31, auto_write=False, brightness = 0.8)
 
 def sparklliest(pone, ptwo, pthree, pfour):
         np.fill(pone)
@@ -13,4 +13,4 @@ def sparklliest(pone, ptwo, pthree, pfour):
             np.show()
             time.sleep(pfour)
 while True:
-    sparklliest(133, 174, 120, 76)
+    sparklliest(56, 10, 4, .0001)
