@@ -5,7 +5,7 @@ import random
 
 np = NeoPixel(board.D2, 31, auto_write=False, brightness = 0.8)
 
-def blue_flames(pone, ptwo, pthree, pfour):
+def flames(pone, ptwo, pthree, pfour):
         np.fill(pone)
         np.show()
         for i in range(ptwo):
@@ -13,4 +13,4 @@ def blue_flames(pone, ptwo, pthree, pfour):
             np.show()
             time.sleep(pfour)
 while True:
-    blue_flames(250, 50, 34, .0000001)
+    flames((250, 80, 0), 50, (200, 34, 0), .0000001)
