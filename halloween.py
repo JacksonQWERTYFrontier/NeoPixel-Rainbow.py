@@ -56,8 +56,8 @@ def fade_in(color,speed):
 while True:
     flames(orange, 50, (200, 34, 0), .0000001)
     rainbow_led = random.choice(palet_list)
-    fade_in(orange, 0.04)
+    fade_in(orange, 0.01)
     flames(orange, 50, (200, 34, 0), .0000001)
-    fade_out(magenta,.04)
+    fade_out(magenta,.01)
     flames(orange, 50, (200, 34, 0), .0000001)
 
