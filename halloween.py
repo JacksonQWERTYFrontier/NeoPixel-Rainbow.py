@@ -11,7 +11,12 @@ magenta = (255,0,255)
 white = (255,255,255)
 orange = (255, 135, 0)
 
+#    flames(magenta, 50, (200, 34, 0), .0000001)
+#    fade_in(orange, 0.01)
+#    fade_out(magenta,.01)
+#    rainbow_led = random.choice(palet_list)
 
+sparkleween = 5
 palet_list = [orange, magenta, white]
 
 def flames(pone, ptwo, pthree, pfour):
@@ -22,7 +27,24 @@ def flames(pone, ptwo, pthree, pfour):
         np.show()
         time.sleep(pfour)
 
+def fade_in(color,speed):
+    np.show()
+    ratio_orange = color[0]/50
+    orig_orange = color[0]
+    ratio_magenta = color[1]/50
+    orig_magenta = color[1]
+    ratio_white = color[2]/50
+    orig_white = color[2]
+    for i in range(1,51):
+        r = int(orig_orange + i * ratio_orange)
+        g = int(orig_magenta +i * ratio_magenta)
+        b = int(orig_white + i * ratio_white)
+        np.fill((r,g,b))
+        np.show()
+        time.sleep(speed)
+        
 def fade_out(color,speed):
+    np.show()
     ratio_orange = color[2]/50
     orig_orange = color[2]
     ratio_magenta = color[0]/50
@@ -38,26 +60,13 @@ def fade_out(color,speed):
         np.show()
         time.sleep(speed)
 
-def fade_in(color,speed):
-    ratio_orange = color[0]/50
-    orig_orange = color[0]
-    ratio_magenta = color[1]/50
-    orig_magenta = color[1]
-    ratio_white = color[2]/50
-    orig_white = color[2]
-    for i in range(1,51):
-        r = int(orig_orange + i * ratio_orange)
-        g = int(orig_magenta +i * ratio_magenta)
-        b = int(orig_white + i * ratio_white)
-        np.fill((r,g,b))
-        np.show()
-        time.sleep(speed)
+
 
 while True:
-    flames(orange, 50, (200, 34, 0), .0000001)
-    rainbow_led = random.choice(palet_list)
-    fade_in(orange, 0.01)
-    flames(orange, 50, (200, 34, 0), .0000001)
-    fade_out(magenta,.01)
-    flames(orange, 50, (200, 34, 0), .0000001)
-
+    anything = random.choice(palet_list)
+    for i in range(sparkleween):
+        flames(anything, 50, (200, 34, 0), .0000001)
+    fade_in(anything, 0.01)
+    fade_out(white,.01)
+    for i in range(sparkleween):
+        flames(anything, 50, (200, 34, 0), .0000001)
