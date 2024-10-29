@@ -6,7 +6,7 @@ import random
 np = NeoPixel(board.D2, 30, auto_write= False, brightness=.2)
 i = 0
 
-
+# These are the main colors used in my code
 magenta = (255,0,255)
 white = (255,255,255)
 orange = (255, 135, 30)
@@ -17,9 +17,13 @@ lightorange = (200, 34, 0)
 #    fade_out(magenta,.01)
 #    rainbow_led = random.choice(palet_list)
 
+#Sparkleween is the legnth of which something will repeat
 sparkleween = 5
-palet_list = [orange, magenta, white]
 
+#Palet_list is a full list of my colors
+palet_list = [orange, magenta, white, lightorange]
+
+# This is my flame function which makes the set leds move like a flame
 def flames(pone, ptwo, pthree, pfour):
     np.fill(pone)
     np.show()
@@ -28,6 +32,7 @@ def flames(pone, ptwo, pthree, pfour):
         np.show()
         time.sleep(pfour)
 
+# THe two functions fade in and fade out can be used to mimic even lightning strikes
 def fade_in(color,speed):
     np.show()
     ratio_orange = color[0]/50
@@ -62,7 +67,7 @@ def fade_out(color,speed):
         time.sleep(speed)
 
 
-
+# This set code is what makes our amazing lightshow
 while True:
     anything = random.choice(palet_list)
     for i in range(sparkleween):
