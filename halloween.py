@@ -10,6 +10,7 @@ i = 0
 magenta = (255,0,255)
 white = (255,255,255)
 orange = (255, 135, 30)
+lightorange = (200, 34, 0)
 
 #    flames(magenta, 50, (200, 34, 0), .0000001)
 #    fade_in(orange, 0.01)
@@ -65,8 +66,8 @@ def fade_out(color,speed):
 while True:
     anything = random.choice(palet_list)
     for i in range(sparkleween):
-        flames(anything, 50, (200, 34, 0), .0000001)
+        flames(anything, 50, (lightorange), .0006)
     fade_in(anything, 0.006)
     fade_out(magenta,.006)
     for i in range(sparkleween):
-        flames(anything, 50, (200, 34, 0), .0000001)
+        flames(anything, 50, lightorange, .0006)
